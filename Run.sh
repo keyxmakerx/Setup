@@ -19,34 +19,34 @@ cd ~ &&\
 sudo apt-get update && sudo apt-get autoremove &&\
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/colomboem/xUbuntu_14.10/ /' >> /etc/apt/sources.list.d/dukto.list" &&\
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/community:/testing/xUbuntu_14.04/ /' >> /etc/apt/sources.list.d/owncloud-client.list"
-sudo add-apt-repository ppa:nowrep/qupzilla &&\
-sudo add-apt-repository ppa:sukso96100/budgie-desktop &&\
-sudo add-apt-repository ppa:webupd8team/haguichi &&\
-sudo add-apt-repository ppa:daniel.pavel/solaar &&\
-sudo add-apt-repository ppa:nuvola-player-builders/stable &&\ 
-sudo add-apt-repository ppa:appgrid/stable &&\
-sudo add-apt-repository ppa:dhor/myway &&\
-sudo add-apt-repository ppa:hikariknight/unix-runescape-client  &&\
-sudo add-apt-repository ppa:atareao/atareao &&\
-sudo add-apt-repository ppa:ffmulticonverter/stable      &&\
-sudo add-apt-repository ppa:peterlevi/ppa &&\
-sudo add-apt-repository ppa:teejee2008/ppa &&\
-sudo add-apt-repository ppa:deluge-team/ppa &&\
-sudo add-apt-repository ppa:asukhovatkin/unity-launcher-folders &&\
-sudo add-apt-repository ppa:the-duck/launcher &&\
-sudo add-apt-repository ppa:shnatsel/dnscrypt &&\
+sudo add-apt-repository -y ppa:nowrep/qupzilla &&\
+sudo add-apt-repository -y ppa:sukso96100/budgie-desktop &&\
+sudo add-apt-repository -y ppa:webupd8team/haguichi &&\
+sudo add-apt-repository -y ppa:daniel.pavel/solaar &&\
+sudo add-apt-repository -y ppa:nuvola-player-builders/stable &&\ 
+sudo add-apt-repository -y ppa:appgrid/stable &&\
+sudo add-apt-repository -y ppa:dhor/myway &&\
+sudo add-apt-repository -y ppa:hikariknight/unix-runescape-client  &&\
+sudo add-apt-repository -y ppa:atareao/atareao &&\
+sudo add-apt-repository -y ppa:ffmulticonverter/stable      &&\
+sudo add-apt-repository -y ppa:peterlevi/ppa &&\
+sudo add-apt-repository -y ppa:teejee2008/ppa &&\
+sudo add-apt-repository -y ppa:deluge-team/ppa &&\
+sudo add-apt-repository -y ppa:asukhovatkin/unity-launcher-folders &&\
+sudo add-apt-repository -y ppa:the-duck/launcher &&\
+sudo add-apt-repository -y ppa:shnatsel/dnscrypt &&\
 sudo sh -c 'echo "deb http://debs.unvanquished.net trusty main" >> /etc/apt/sources.list.d/unvanquished.list' &&\
-sudo add-apt-repository ppa:danielrichter2007/grub-customizer &&\
-sudo add-apt-repository ppa:george-edison55/george-edison &&\
-sudo add-apt-repository ppa:samrog131/ppa &&\
-sudo add-apt-repository ppa:ubuntu-wine/ppa &&\
-sudo add-apt-repository ppa:n-muench/burg &&\
-sudo add-apt-repository ppa:nilarimogard/webupd8 &&\
-sudo add-apt-repository ppa:samrog131/ppa &&\
-sudo add-apt-repository ppa:webupd8team/tribler &&\
-sudo add-apt-repository ppa:webupd8team/y-ppa-manager &&\
-sudo add-apt-repository ppa:me-davidsansome/clementine &&\
-sudo add-apt-repository ppa:wfg/0ad.dev &&\
+sudo add-apt-repository -y ppa:danielrichter2007/grub-customizer &&\
+sudo add-apt-repository -y ppa:george-edison55/george-edison &&\
+sudo add-apt-repository -y ppa:samrog131/ppa &&\
+sudo add-apt-repository -y ppa:ubuntu-wine/ppa &&\
+sudo add-apt-repository -y ppa:n-muench/burg &&\
+sudo add-apt-repository -y ppa:nilarimogard/webupd8 &&\
+sudo add-apt-repository -y ppa:samrog131/ppa &&\
+sudo add-apt-repository -y ppa:webupd8team/tribler &&\
+sudo add-apt-repository -y ppa:webupd8team/y-ppa-manager &&\
+sudo add-apt-repository -y ppa:me-davidsansome/clementine &&\
+sudo add-apt-repository -y ppa:wfg/0ad.dev &&\
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9BA73CFA &&\
 wget http://debs.unvanquished.net/unvanquished-archive-key.gpg.asc &&\
 sudo apt-key add unvanquished-archive-key.gpg.asc &&\
@@ -65,34 +65,34 @@ sudo apt-get install conky-all hddtemp &&\
 sudo apt-get install vlc xbmc &&\
  echo Halfway Point of Reference &&\
  sleep 10 &&\
-sudo apt-get install wine1.7 nmon htop &&\
-sudo apt-get install duck-launcher &&\
-sudo apt-get install ubuntu-restricted-extras &&\
-sudo apt-get install geary bacula git openshot mosh deluge &&\
-sudo apt-get install icedtea-7-plugin openjdk-7-jre openjdk-7-jdk unix-runescape-client &&\
-sudo apt-get install unity-tweak-tool qemu-kvm &&\
-sudo apt-get install libvirt-bin &&\
-sudo apt-get install variety openssh-server openssh-client mosh &&\
-sudo apt-get install ftp bridge-utils virt-manager minitube &&\
-sudo apt-get install dnscrypt-proxy &&\
+sudo apt-get install -y wine1.7 nmon htop &&\
+sudo apt-get install -y duck-launcher &&\
+sudo apt-get install -y ubuntu-restricted-extras &&\
+sudo apt-get install -y geary bacula git openshot mosh deluge &&\
+sudo apt-get install -y icedtea-7-plugin openjdk-7-jre openjdk-7-jdk unix-runescape-client &&\
+sudo apt-get install -y unity-tweak-tool qemu-kvm &&\
+sudo apt-get install -y libvirt-bin &&\
+sudo apt-get install -y variety openssh-server openssh-client mosh &&\
+sudo apt-get install -y ftp bridge-utils virt-manager minitube &&\
+sudo apt-get install -y dnscrypt-proxy &&\
 echo Error on line 77 &&\
 sleep 2 &&\
 sudo tree &&\
 
-sudo apt-get install conky-manager &&\
-sudo apt-get install unity-launcher-folders &&\
-sudo apt-get install 0ad &&\
-sudo apt-get install gufw burg burg-themes &&\
-sudo apt-get install y-ppa-manager &&\
-sudo apt-get install ubuntu-vm-builder &&\
-sudo apt-get install tribler &&\
-sudo apt-get install clutter-gtk-1.0 mx-1.0 &&\
-sudo apt-get install indicator-cpufreq traceroute photoqt screen &&\
-sudo apt-get install keybinder-3.0 gee-0.8 &&\
-sudo apt-get install libnspr4-0d guake git gimp cmake &&\
-sudo apt-get install syncwall &&\
-sudo apt-get install terminator clementine &&\
-sudo apt-get install libxml2-dev &&\
+sudo apt-get install -y conky-manager &&\
+sudo apt-get install -y unity-launcher-folders &&\
+sudo apt-get install -y 0ad &&\
+sudo apt-get install -y gufw burg burg-themes &&\
+sudo apt-get install -y y-ppa-manager &&\
+sudo apt-get install -y ubuntu-vm-builder &&\
+sudo apt-get install -y tribler &&\
+sudo apt-get install -y clutter-gtk-1.0 mx-1.0 &&\
+sudo apt-get install -y indicator-cpufreq traceroute photoqt screen &&\
+sudo apt-get install -y keybinder-3.0 gee-0.8 &&\
+sudo apt-get install -y libnspr4-0d guake git gimp cmake &&\
+sudo apt-get install -y syncwall &&\
+sudo apt-get install -y terminator clementine &&\
+sudo apt-get install -y libxml2-dev &&\
  echo Finished installing major programs, moving onto major tasks. Please wait why we prepare services. &&\
  sleep 2 &&\
  sudo ln -s /etc/apparmor.d/usr.sbin.dnscrypt-proxy /etc/apparmor.d/disable/ &&\
