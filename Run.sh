@@ -1,6 +1,6 @@
 #!/bin/bash
 #Declare the log file
-LOGFILE=/path/to/log.txt
+LOGFILE=/usr/scriptlog.txt
 sleep 5 &&\ 
  echo This script is ONLY for Ubuntu Debian with a Unity GUI. It will work on other distros with errors along with it. Proceed with Caution if you are not using Ubuntu 13.10, or higher. &&\
  sleep 2 &&\
