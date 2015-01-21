@@ -1,14 +1,10 @@
 #!/bin/bash
 #Declare the log file
+[[ $(id --user) -ne 0 ]] && { echo "Sudoing..." ; sudo $(readlink -e $0) "$@" ; exit 0 ; } # sudo ourself
 LOGFILE=/usr/scriptlog.txt
 sleep 5
  echo This script is ONLY for Ubuntu Debian with a Unity GUI. It will work on other distros with errors along with it. Proceed with Caution if you are not using Ubuntu 13.10, or higher. 
 sleep 10
-#!/bin/bash
-
-(( UID != 0 )) && { echo "Run the script as root"; exit 1; }
-
-LOGFILE=........
 
 ppas=( 
        ppa:nowrep/qupzilla                      ppa:sukso96100/budgie-desktop
