@@ -14,7 +14,7 @@ ppas=(
        ppa:atareao/atareao                      ppa:ffmulticonverter/stable
        ppa:peterlevi/ppa                        ppa:teejee2008/ppa
        ppa:deluge-team/ppa                      ppa:asukhovatkin/unity-launcher-folders
-       ppa:the-duck/launcher                    ppa:shnatsel/dnscrypt
+       ppa:the-duck/launcher                    ppa:anton+/dnscrypt
        ppa:danielrichter2007/grub-customizer    ppa:george-edison55/george-edison
        ppa:samrog131/ppa                        ppa:ubuntu-wine/ppa
        ppa:n-muench/burg                        ppa:nilarimogard/webupd8
