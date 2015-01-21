@@ -65,6 +65,9 @@ packages=(
            syncwall 
            terminator clementine 
            libxml2-dev 
+           lib32z1 
+           lib32ncurses5 
+           lib32bz2-1.0
          )
 
 # --- start -------------------
@@ -95,7 +98,7 @@ done
 
     apt-get update && sudo apt-get autoremove
 
-#    apt-get install "${packages[@]}"  # everything at once
+#   apt-get install "${packages[@]}"  # everything at once
 
     for pkg in "${packages[@]}"
     do
@@ -107,7 +110,6 @@ done
 # etc 
 
 }
-sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 
 cd ~/Downloads 
 wget -O nomachine.deb http://download.nomachine.com/download/4.4/Linux/nomachine_4.4.1_1_amd64.deb 
 sudo dpkg -i nomachine.deb 
