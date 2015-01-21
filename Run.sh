@@ -107,28 +107,28 @@ done
 # etc 
 
 }
-sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 &>"$LOGFILE"
-cd ~/Downloads &>"$LOGFILE"
-wget -O nomachine.deb http://download.nomachine.com/download/4.4/Linux/nomachine_4.4.1_1_amd64.deb &>"$LOGFILE"
-sudo dpkg -i nomachine.deb &>"$LOGFILE"
-wget -O Tomb.tar.gz https://files.dyne.org/.xsend.php?file=tomb/Tomb-2.0.1.tar.gz &>"$LOGFILE"
-tar xvfz Tomb.tar.gz &>"$LOGFILE"
-cd Tomb-2.0.1 &>"$LOGFILE"
-sudo make install &>"$LOGFILE"
+sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 
+cd ~/Downloads 
+wget -O nomachine.deb http://download.nomachine.com/download/4.4/Linux/nomachine_4.4.1_1_amd64.deb 
+sudo dpkg -i nomachine.deb 
+wget -O Tomb.tar.gz https://files.dyne.org/.xsend.php?file=tomb/Tomb-2.0.1.tar.gz 
+tar xvfz Tomb.tar.gz 
+cd Tomb-2.0.1 
+sudo make install 
 wget -O kingsoft-office-NoobsLab.deb http://kdl.cc.ksosoft.com/wps-community/download/a16/wps-office_9.1.0.4945~a16p3_i386.deb    &&\
-sudo dpkg -i kingsoft-office-NoobsLab.deb     &>"$LOGFILE"
-rm kingsoft-office-NoobsLab.deb &>"$LOGFILE"
-wget http://repo.steampowered.com/steam/archive/precise/steam_latest.deb &>"$LOGFILE"
-  sudo apt-get install gdebi-core &>"$LOGFILE"
-  sudo gdebi steam_latest.deb &>"$LOGFILE"
-wget -O unified-remote.deb http://www.unifiedremote.com/download/linux-x64-deb &>"$LOGFILE"
-sudo dpkg -i unified-remote.deb &>"$LOGFILE"
-sudo apt-get upgrade &>"$LOGFILE"
-echo Congratulations It finished! &>"$LOGFILE"
- sleep 2 &>"$LOGFILE"
- echo Dont forget to add programs needed to your startup, in ubuntu just type startup in the unity search bar. If you are using another distro, Google it lazy! &>"$LOGFILE"
+sudo dpkg -i kingsoft-office-NoobsLab.deb     
+rm kingsoft-office-NoobsLab.deb 
+wget http://repo.steampowered.com/steam/archive/precise/steam_latest.deb 
+  sudo apt-get install gdebi-core 
+  sudo gdebi steam_latest.deb 
+wget -O unified-remote.deb http://www.unifiedremote.com/download/linux-x64-deb 
+sudo dpkg -i unified-remote.deb 
+sudo apt-get upgrade 
+echo Congratulations It finished! 
+ sleep 2 
+ echo Dont forget to add programs needed to your startup, in ubuntu just type startup in the unity search bar. If you are using another distro, Google it lazy! 
  sleep 4
-  &>"$LOGFILE"
+  
 #intel Drivers
 #sudo apt-get install i965-va-driver &&\ 
  #            sudo wget https://download.01.org/gfx/ubuntu/14.04/main/pool/main/i/intel-linux-graphics-installer/intel-linux-graphics-installer_1.0.5-0intel1_amd64.deb &&\ 
