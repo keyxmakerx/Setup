@@ -69,6 +69,33 @@ packages=(
            lib32ncurses5 
            lib32bz2-1.0
          )
+ PhP()
+ {
+  php5-fpm php5-mysql
+ }
+ lemp_install()
+{
+  echo "installing LEMP...."
+  apt-get install nginx mysql-server
+  mysql_install_db
+  mysql_secure_installation
+   for ppa in "${PhP[@]}"
+    do
+        apt-get install -a "$pkg"
+    done
+}
+
+while :
+do
+    read -n1 -p "Do you want to install LEMP [Y]es [N]o  " choice
+    echo
+    case ${choice^} in
+        Y) lemp_install;;
+        N) break;;          #<- this will restart the LEMP question, if you want to move beyond the loop on N you need break
+        *) continue;;
+    esac
+    break
+done
 
 # --- start -------------------
 
