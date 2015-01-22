@@ -69,17 +69,14 @@ packages=(
            lib32ncurses5 
            lib32bz2-1.0
          )
- PhP()
- {
-  php5-fpm php5-mysql
- }
+ PhP=( php5-fpm php5-mysql )
  lemp_install()
 {
   echo "installing LEMP...."
   apt-get install nginx mysql-server
   mysql_install_db
   mysql_secure_installation
-   for ppa in "${PhP[@]}"
+   for pkg in "${PhP[@]}"
     do
         apt-get install -a "$pkg"
     done
