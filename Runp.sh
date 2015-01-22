@@ -41,7 +41,7 @@ packages=(
            google-chrome-unstable
            conky-all hddtemp
            vlc xbmc
-           wine1.7 nmon htop 
+           wine1.7 nmon htop
            duck-launcher 
            ubuntu-restricted-extras 
            geary bacula git openshot mosh deluge 
