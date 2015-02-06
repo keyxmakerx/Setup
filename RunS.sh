@@ -18,6 +18,9 @@ declare -A add_ppas=(
 
 packages=(
           tmux
+          mosh
+          htop
+          nmon
          )
  PhP=( php5-fpm php5-mysql )
  lemp_install()
@@ -90,9 +93,6 @@ done
 # etc 
 
 }
-cd ~/Downloads 
-wget -O nomachine.deb http://download.nomachine.com/download/4.4/Linux/nomachine_4.4.1_1_amd64.deb 
-sudo dpkg -i nomachine.deb 
 cd /usr/share
 mkdir /Teamspeak
 chgrp keyxmakerx Teamspeak
