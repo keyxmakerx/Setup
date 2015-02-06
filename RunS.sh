@@ -7,20 +7,7 @@ sleep 5
 sleep 10
 
 ppas=( 
-       ppa:nowrep/qupzilla                      ppa:sukso96100/budgie-desktop
-       ppa:webupd8team/haguichi                 ppa:daniel.pavel/solaar
-       ppa:nuvola-player-builders/stable        ppa:appgrid/stable
-       ppa:dhor/myway                           ppa:hikariknight/unix-runescape-client
-       ppa:atareao/atareao                      ppa:ffmulticonverter/stable
-       ppa:peterlevi/ppa                        ppa:teejee2008/ppa
-       ppa:deluge-team/ppa                      ppa:asukhovatkin/unity-launcher-folders
-       ppa:the-duck/launcher                    ppa:anton+/dnscrypt
-       ppa:danielrichter2007/grub-customizer    ppa:george-edison55/george-edison
-       ppa:samrog131/ppa                        ppa:ubuntu-wine/ppa
-       ppa:n-muench/burg                        ppa:nilarimogard/webupd8
-       ppa:samrog131/ppa                        ppa:webupd8team/tribler
-       ppa:webupd8team/y-ppa-manager            ppa:me-davidsansome/clementine
-       ppa:wfg/0ad.dev                          
+                               
      )
 
 declare -A add_ppas=( 
@@ -30,44 +17,7 @@ declare -A add_ppas=(
                     )
 
 packages=(
-           uget
-           indicator-multiload qupzilla
-           filezilla
-           unvanquished
-           haguichi haguichi-appindicator
-           konqueror diodon diodon-plugins gsmartcontrol
-           dukto tree appgrid
-           nuvolaplayer
-           google-chrome-unstable
-           conky-all hddtemp
-           vlc xbmc
-           wine1.7 nmon htop 
-           duck-launcher 
-           ubuntu-restricted-extras 
-           geary bacula git openshot mosh deluge 
-           icedtea-7-plugin openjdk-7-jre openjdk-7-jdk unix-runescape-client 
-           unity-tweak-tool qemu-kvm 
-           libvirt-bin 
-           variety openssh-server openssh-client mosh 
-           ftp bridge-utils virt-manager minitube 
-           dnscrypt-proxy 
-           conky-manager 
-           unity-launcher-folders 
-           0ad 
-           gufw burg burg-themes 
-           y-ppa-manager 
-           ubuntu-vm-builder 
-           tribler 
-           clutter-gtk-1.0 mx-1.0 
-           indicator-cpufreq traceroute photoqt screen 
-           keybinder-3.0 gee-0.8 
-           libnspr4-0d guake git gimp cmake 
-           syncwall 
-           terminator clementine 
-           libxml2-dev 
-           lib32z1 
-           lib32ncurses5 
-           lib32bz2-1.0
+          tmux
          )
  PhP=( php5-fpm php5-mysql )
  lemp_install()
@@ -81,6 +31,14 @@ packages=(
         apt-get install -a "$pkg"
     done
 }
+ secure_install()
+ {
+   echo "Securing Server..."
+   mkdir ~/bak
+   sed -i.bak 'd' /etc/ssh/sshd_config
+   mv /etc/ssh/ssh_config ~/bak/
+   sed -i 's/22/22880/' /etc/ssh/sshd_config
+ }
 
 while :
 do
@@ -116,9 +74,7 @@ done
         echo "deb ${add_ppas[$add]}" >> "/etc/apt/sources.list.d/$add.list"
     done
 
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9BA73CFA
-    wget http://debs.unvanquished.net/unvanquished-archive-key.gpg.asc
-    apt-key add unvanquished-archive-key.gpg.asc
+
 
     apt-get update && sudo apt-get autoremove
 
@@ -137,19 +93,11 @@ done
 cd ~/Downloads 
 wget -O nomachine.deb http://download.nomachine.com/download/4.4/Linux/nomachine_4.4.1_1_amd64.deb 
 sudo dpkg -i nomachine.deb 
-wget -O Tomb.tar.gz https://files.dyne.org/.xsend.php?file=tomb/Tomb-2.0.1.tar.gz 
-tar xvfz Tomb.tar.gz 
-cd Tomb-2.0.1 
-sudo make install 
-wget -O kingsoft-office-NoobsLab.deb http://kdl.cc.ksosoft.com/wps-community/download/a16/wps-office_9.1.0.4945~a16p3_i386.deb    &&\
-sudo dpkg -i kingsoft-office-NoobsLab.deb     
-rm kingsoft-office-NoobsLab.deb 
-wget http://repo.steampowered.com/steam/archive/precise/steam_latest.deb 
-  sudo apt-get install gdebi-core 
-  sudo gdebi steam_latest.deb 
-wget -O unified-remote.deb http://www.unifiedremote.com/download/linux-x64-deb 
-sudo dpkg -i unified-remote.deb 
-sudo apt-get upgrade 
+cd /usr/share
+mkdir /Teamspeak
+chgrp keyxmakerx Teamspeak
+wget -O ts-package.tar.gz http://dl.4players.de/ts/releases/3.0.11.2/teamspeak3-server_linux-amd64-3.0.11.2.tar.gz &&\
+tar xvfz ts-package.tar.gz
 echo Congratulations It finished! 
  sleep 2 
  echo Dont forget to add programs needed to your startup, in ubuntu just type startup in the unity search bar. If you are using another distro, Google it lazy! 
