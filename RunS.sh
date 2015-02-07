@@ -23,6 +23,37 @@ packages=(
          )
  PhP=( php5-fpm php5-mysql )
  
+ while :
+do
+    read -p "Continue? y/n " choice
+    case ${choice,,} in
+        y|ye|yes) break;;
+        n|no) echo "Bye!"; exit;;
+    esac
+done
+
+{
+    for ppa in "${ppas[@]}"
+    do
+        add-apt repository -a "$ppa"
+    done
+
+    for add in "${!add_ppas[@]}"
+    do
+        echo "deb ${add_ppas[$add]}" >> "/etc/apt/sources.list.d/$add.list"
+    done
+
+
+
+    apt-get update && sudo apt-get autoremove
+
+#   apt-get install "${packages[@]}"  # everything at once
+
+    for pkg in "${packages[@]}"
+    do
+        apt-get install "$pkg"
+    done
+ 
  ajenti_install()
  {
   echo "Installing Ajenti..."
@@ -74,39 +105,33 @@ do
     esac
     break
 done
+while :
+do
+    read -n1 -p "Do you want to use Automated Seucure Linux [Y]es [N]o  " choice
+    echo
+    case ${choice^} in
+        Y) secure_install;;
+        N) break;;          #<- this will restart the LEMP question, if you want to move beyond the loop on N you need break
+        *) continue;;
+    esac
+    break
+done
+while :
+do
+    read -n1 -p "Do you want to install Ajenti Control Panel [Y]es [N]o  " choice
+    echo
+    case ${choice^} in
+        Y) ajenti_install;;
+        N) break;;          #<- this will restart the LEMP question, if you want to move beyond the loop on N you need break
+        *) continue;;
+    esac
+    break
+done
+
 
 # --- start -------------------
 
-while :
-do
-    read -p "Continue? y/n " choice
-    case ${choice,,} in
-        y|ye|yes) break;;
-        n|no) echo "Bye!"; exit;;
-    esac
-done
 
-{
-    for ppa in "${ppas[@]}"
-    do
-        add-apt repository -a "$ppa"
-    done
-
-    for add in "${!add_ppas[@]}"
-    do
-        echo "deb ${add_ppas[$add]}" >> "/etc/apt/sources.list.d/$add.list"
-    done
-
-
-
-    apt-get update && sudo apt-get autoremove
-
-#   apt-get install "${packages[@]}"  # everything at once
-
-    for pkg in "${packages[@]}"
-    do
-        apt-get install "$pkg"
-    done
 
 # etc
 # etc
