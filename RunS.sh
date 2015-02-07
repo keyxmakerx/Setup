@@ -89,9 +89,25 @@ done
    ufw allow 30033/tcp
    ufw allow 10011/tcp
    ufw allow 41144/tcp
+   ufw allow 443/tcp
+   ufw allow 25/tcp
    ufw allow www
    ufw allow sftp
    ufw enable
+   adduser nonadmin
+   gpasswd -a nonadmin sudo
+   dpkg-statoverride --update --add root sudo 4750 /bin/su
+   #I need to add the Improve IP security, php hardening,  from http://blog.mattbrock.co.uk/hardening-the-security-on-ubuntu-server-14-04/
+   #This is where we will configure private ssh keys, once I learn how to use regex better
+   #This is where the line for PermitRootLogin yes should be changed to PermitRootLogin no
+   echo "A user was created named (nonadmin) Which is the admin account that will allow you to switch to root."
+   sleep 5
+   dpkg-reconfigure -plow unattended-upgrades
+   apt-get install acct logwatch
+   mv /etc/cron.daily/00logwatch /etc/cron.weekly/
+   #Don't know how to do this either (--range 'between -7 days and -1 days' to the end of the /usr/sbin/logwatch command.)
+   touch /var/log/wtmp
+   #I also want to setup his bash script. 
  }
 
 while :
@@ -147,4 +163,4 @@ echo Congratulations It finished!
  sleep 2 
  echo Dont forget to add programs needed to your startup, in ubuntu just type startup in the unity search bar. If you are using another distro, Google it lazy! 
  sleep 4
-  
+reboot
