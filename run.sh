@@ -5,7 +5,7 @@ do
     case ${choice^} in
         P) ./runp;;
         G) ./rung;;
-        S) ./runs;;
+        S) ./runs.sh;;
         *) continue;;
     esac
     break
