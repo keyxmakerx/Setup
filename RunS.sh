@@ -3,7 +3,7 @@
 [[ $(id --user) -ne 0 ]] && { echo "Sudoing..." ; sudo $(readlink -e $0) "$@" ; exit 0 ; } # sudo ourself
 LOGFILE=/usr/scriptlog.txt
 sleep 5
- echo This script is ONLY for Ubuntu Debian with a Unity GUI. It will work on other distros with errors along with it. Proceed with Caution if you are not using Ubuntu 13.10, or higher. 
+ echo This script is ONLY for Ubuntu Debian Server 64bit. It will work on other distros with errors along with it. Proceed with Caution if you are not using Ubuntu 14.04, or higher. 
 sleep 10
 
 ppas=( 
