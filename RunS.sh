@@ -11,9 +11,7 @@ ppas=(
      )
 
 declare -A add_ppas=( 
-                      ["unvanquished"]="http://debs.unvanquished.net trusty main"
-                      ["owncloud-client"]="http://download.opensuse.org/repositories/home:/colomboem/xUbuntu_14.10/ /"
-                      ["dukto"]="http://download.opensuse.org/repositories/isv:/ownCloud:/community:/testing/xUbuntu_14.04/ /"                     
+                      ["Ajenti"]="http://repo.ajenti.org/ng/debian main main ubuntu"
                     )
 
 packages=(
@@ -21,8 +19,20 @@ packages=(
           mosh
           htop
           nmon
+          ufw
          )
  PhP=( php5-fpm php5-mysql )
+ 
+ ajenti_install()
+ {
+  echo "Installing Ajenti..."
+  wget http://repo.ajenti.org/debian/key -O- | sudo apt-key add -
+  apt-get install ajenti
+  service ajenti restart
+  ufw allow 8000
+  
+ }
+ 
  lemp_install()
 {
   echo "installing LEMP...."
@@ -41,6 +51,16 @@ packages=(
    sed -i.bak 'd' /etc/ssh/sshd_config
    mv /etc/ssh/ssh_config ~/bak/
    sed -i 's/22/22880/' /etc/ssh/sshd_config
+   ufw default deny incoming
+   ufw default allow outgoing
+   ufw allow 22880/tcp
+   ufw allow 9987/upd
+   ufw allow 30033/tcp
+   ufw allow 10011/tcp
+   ufw allow 41144/tcp
+   ufw allow www
+   ufw allow sftp
+   ufw enable
  }
 
 while :
@@ -103,27 +123,3 @@ echo Congratulations It finished!
  echo Dont forget to add programs needed to your startup, in ubuntu just type startup in the unity search bar. If you are using another distro, Google it lazy! 
  sleep 4
   
-#intel Drivers
-#sudo apt-get install i965-va-driver &&\ 
- #            sudo wget https://download.01.org/gfx/ubuntu/14.04/main/pool/main/i/intel-linux-graphics-installer/intel-linux-graphics-installer_1.0.5-0intel1_amd64.deb &&\ 
-  #           sudo apt-get update &&\ 
-   #          sudo dkph -i intel-linux-graphics-installer_1.0.5-0intel1_amd64.deb
-
-#Nvidea Drivers
-#sudo add-apt-repository ppa:bumblebee/stable &&\
- #           sudo apt-get update &&\
-  #          sudo apt-get install bumblebee bumblebee-nvidia
-
-#Silverlight
-#sudo apt-add-repository ppa:ehoover/compholio &&\
- #        sudo apt-add-repository ppa:mqchael/pipelight &&\
-  #       sudo apt-get update && sudo apt-get upgrade &&\
-   #      sudo apt-get install pipelight &&\
-    #     rm -rf ~/.wine-pipelight/
-
-    #Next install 
-#         "Chrome - https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/#djflhoibgkdhkhhcedjiklpkjnoahfmg" //Currently Chrome Doesnt work!
-#         "Firefox https://addons.mozilla.org/en-US/firefox/addon/user-agent-overrider" 
-#         //Select the firefox 15 or + version
-    #Minetest
-#sudo apt-get install git build-essential libirrlicht-dev libgettextpo0 libfreetype6-dev cmake libbz2-dev libpng12-dev libjpeg8-dev libxxf86vm-dev libgl1-mesa-dev libsqlite3-dev libogg-dev libvorbis-dev libopenal-dev; git clone git://github.com/minetest/minetest.git; cd minetest/games; git clone git://github.com/minetest/minetest_game.git; cd ..; cmake . -DENABLE_GETTEXT=1 -DENABLE_FREETYPE=1 -DCMAKE_INSTALL_PREFIX:PATH=$(pwd); cd src; make -j$(grep -c processor /proc/cpuinfo); sudo make install; cd ../bin; ./minetest; echo -e "You can run Minetest again by double-clicking \"minetest\" in the \"bin\" folder of the \"minetest\" folder in your home folder.\nYou can install mods in ~/.minetest/mods"lots of hardware -
