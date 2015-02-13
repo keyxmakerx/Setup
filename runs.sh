@@ -51,16 +51,16 @@ done
 
     for pkg in "${packages[@]}"
     do
-        apt-get install "$pkg"
+        apt-get install -y "$pkg"
     done
  
  ajenti_install()
  {
   echo "Installing Ajenti..."
   wget http://repo.ajenti.org/debian/key -O- | sudo apt-key add -
-  apt-get install ajenti
+  apt-get update && apt-get install ajenti -y
   service ajenti restart
-  ufw allow 8000
+  ufw allow 8000/tcp
   
  }
  
@@ -80,7 +80,7 @@ done
    echo "Securing Server..."
    mkdir ~/bak
    sed -i.bak 'd' /etc/ssh/sshd_config
-   mv /etc/ssh/ssh_config ~/bak/
+   mv /etc/ssh/sshd_config.bak ~/bak/
    sed -i 's/22/22880/' /etc/ssh/sshd_config
    ufw default deny incoming
    ufw default allow outgoing
@@ -91,7 +91,7 @@ done
    ufw allow 41144/tcp
    ufw allow 443/tcp
    ufw allow 25/tcp
-   ufw allow www
+   ufw allow 80/tcp
    ufw allow sftp
    ufw enable
    adduser nonadmin
