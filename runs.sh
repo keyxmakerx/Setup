@@ -11,7 +11,7 @@ ppas=(
      )
 
 declare -A add_ppas=( 
-                      ["Ajenti"]="http://repo.ajenti.org/ng/debian main main ubuntu"
+                      ["Ajenti"]=""
                     )
 
 packages=(
@@ -57,9 +57,7 @@ done
  ajenti_install()
  {
   echo "Installing Ajenti..."
-  wget http://repo.ajenti.org/debian/key -O- | sudo apt-key add -
-  apt-get update && apt-get install ajenti -y
-  service ajenti restart
+  wget -O- https://raw.github.com/Eugeny/ajenti/master/scripts/install-ubuntu.sh | sudo sh
   ufw allow 8000/tcp
   
  }
@@ -93,7 +91,6 @@ done
    ufw allow 25/tcp
    ufw allow 80/tcp
    ufw allow sftp
-   ufw enable
    adduser nonadmin
    gpasswd -a nonadmin sudo
    dpkg-statoverride --update --add root sudo 4750 /bin/su
