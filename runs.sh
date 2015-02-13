@@ -108,6 +108,8 @@ done
    #Don't know how to do this either (--range 'between -7 days and -1 days' to the end of the /usr/sbin/logwatch command.)
    touch /var/log/wtmp
    #I also want to setup his bash script. 
+   echo "When using mosh, please use mosh user@example.com --ssh="ssh -p 22880" instead"
+   sleep 5
  }
 
 while :
