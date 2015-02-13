@@ -90,6 +90,7 @@ done
    ufw allow 443/tcp
    ufw allow 25/tcp
    ufw allow 80/tcp
+   ufw allow ssh
    ufw allow sftp
    adduser nonadmin
    gpasswd -a nonadmin sudo
