@@ -76,10 +76,10 @@ done
  secure_install()
  {
    echo "Securing Server..."
-   mkdir ~/bak
-   sed -i.bak 'd' /etc/ssh/sshd_config
-   mv /etc/ssh/sshd_config.bak ~/bak/
-   sed -i 's/22/22880/' /etc/ssh/sshd_config
+   #mkdir ~/bak
+   #sed -i.bak 'd' /etc/ssh/sshd_config
+   #mv /etc/ssh/sshd_config.bak ~/bak/
+   #sed -i 's/22/22880/' /etc/ssh/sshd_config
    ufw default deny incoming
    ufw default allow outgoing
    ufw allow 22880/tcp
