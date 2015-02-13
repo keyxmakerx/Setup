@@ -21,7 +21,10 @@ packages=(
           nmon
           ufw
          )
- PhP=( php5-fpm php5-mysql )
+ PhP=    (
+         php5-fpm
+         php5-mysql 
+         )
  
  while :
 do
@@ -62,7 +65,7 @@ done
   
  }
  
- lemp_install()
+#lemp_install()
 {
   echo "installing LEMP...."
   apt-get install nginx mysql-server
@@ -110,7 +113,7 @@ done
    sleep 5
  }
 
-while :
+#while :
 do
     read -n1 -p "Do you want to install LEMP [Y]es [N]o  " choice
     echo
