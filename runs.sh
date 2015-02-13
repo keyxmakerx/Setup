@@ -165,4 +165,5 @@ echo Congratulations It finished!
  sleep 2 
  echo Dont forget to add programs needed to your startup, in ubuntu just type startup in the unity search bar. If you are using another distro, Google it lazy! 
  sleep 4
+ ufw enable
 reboot
