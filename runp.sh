@@ -111,9 +111,9 @@ done
 
 }
 cd ~/Downloads 
-wget -O nomachine.deb http://download.nomachine.com/download/4.4/Linux/nomachine_4.4.1_1_amd64.deb 
+wget -O nomachine.deb http://download.nomachine.com/download/4.4/Linux/nomachine_4.4.12_11_amd64.deb
 sudo dpkg -i nomachine.deb 
-wget -O Tomb.tar.gz https://files.dyne.org/.xsend.php?file=tomb/Tomb-2.0.1.tar.gz 
+wget -O Tomb.tar.gz https://files.dyne.org/tomb
 tar xvfz Tomb.tar.gz 
 cd Tomb-2.0.1 
 sudo make install 
@@ -123,7 +123,7 @@ rm kingsoft-office-NoobsLab.deb
 wget http://repo.steampowered.com/steam/archive/precise/steam_latest.deb 
   sudo apt-get install gdebi-core 
   sudo gdebi steam_latest.deb 
-wget -O unified-remote.deb http://www.unifiedremote.com/download/linux-x64-deb 
+wget -O unified-remote.deb https://www.unifiedremote.com/download/linux-x64-deb 
 sudo dpkg -i unified-remote.deb 
 sudo apt-get upgrade 
 echo Congratulations It finished! 
