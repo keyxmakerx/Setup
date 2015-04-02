@@ -100,6 +100,8 @@ done
 
 #   apt-get install "${packages[@]}"  # everything at once
 
+    sudo apt-get build-dep guake
+
     for pkg in "${packages[@]}"
     do
         apt-get install "$pkg"
