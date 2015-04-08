@@ -20,7 +20,7 @@ ppas=(
        ppa:n-muench/burg                        ppa:nilarimogard/webupd8
        ppa:samrog131/ppa                        ppa:webupd8team/tribler
        ppa:webupd8team/y-ppa-manager            ppa:me-davidsansome/clementine
-       ppa:wfg/0ad.dev                          
+       ppa:wfg/0ad.dev                          ppa:indicator-multiload/daily
      )
 
 declare -A add_ppas=( 
