@@ -3,8 +3,8 @@ do
     read -n1 -p "[P]ersonal [G]aming [S]erver ?   " choice
     echo
     case ${choice^} in
-        P) ./runp;;
-        G) ./rung;;
+        P) ./runp.sh;;
+        G) ./rung.sh;;
         S) ./runs.sh;;
         *) continue;;
     esac
