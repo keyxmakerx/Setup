@@ -44,7 +44,7 @@ packages=(
            wine1.7 nmon htop
            duck-launcher 
            ubuntu-restricted-extras 
-           geary bacula git openshot mosh deluge 
+           geary git openshot mosh deluge 
            icedtea-7-plugin openjdk-7-jre openjdk-7-jdk unix-runescape-client 
            unity-tweak-tool qemu-kvm 
            libvirt-bin 
