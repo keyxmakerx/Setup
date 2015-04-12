@@ -68,6 +68,7 @@ packages=(
            lib32z1 
            lib32ncurses5 
            lib32bz2-1.0
+           gnome-boxes
          )
 
 # --- start -------------------
@@ -104,7 +105,7 @@ done
 
     for pkg in "${packages[@]}"
     do
-        apt-get install "$pkg"
+        apt-get install -y "$pkg"
     done
 
 # etc
