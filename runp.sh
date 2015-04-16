@@ -21,12 +21,14 @@ ppas=(
        ppa:samrog131/ppa                        ppa:webupd8team/tribler
        ppa:webupd8team/y-ppa-manager            ppa:me-davidsansome/clementine
        ppa:wfg/0ad.dev                          ppa:indicator-multiload/daily
+       ppa:ytvwld/syncthing
      )
 
 declare -A add_ppas=( 
                       ["unvanquished"]="http://debs.unvanquished.net trusty main"
                       ["owncloud-client"]="http://download.opensuse.org/repositories/home:/colomboem/xUbuntu_14.10/ /"
                       ["dukto"]="http://download.opensuse.org/repositories/isv:/ownCloud:/community:/testing/xUbuntu_14.04/ /"                     
+                      ["spotify"]="http://repository.spotify.com stable non-free" 
                     )
 
 packages=(
@@ -69,6 +71,8 @@ packages=(
            lib32ncurses5 
            lib32bz2-1.0
            gnome-boxes
+           syncthing
+           spotify-client-qt
          )
 
 # --- start -------------------
@@ -96,6 +100,7 @@ done
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9BA73CFA
     wget http://debs.unvanquished.net/unvanquished-archive-key.gpg.asc
     apt-key add unvanquished-archive-key.gpg.asc
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59
 
     apt-get update && sudo apt-get autoremove
 
