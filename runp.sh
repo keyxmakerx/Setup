@@ -8,7 +8,7 @@ sleep 10
 
 ppas=( 
        ppa:nowrep/qupzilla                      ppa:sukso96100/budgie-desktop
-       ppa:webupd8team/haguichi                 ppa:daniel.pavel/solaar
+       ppa:daniel.pavel/solaar
        ppa:nuvola-player-builders/stable        ppa:appgrid/stable
        ppa:dhor/myway                           ppa:hikariknight/unix-runescape-client
        ppa:atareao/atareao                      ppa:ffmulticonverter/stable
@@ -18,9 +18,9 @@ ppas=(
        ppa:danielrichter2007/grub-customizer    ppa:george-edison55/george-edison
        ppa:samrog131/ppa                        ppa:ubuntu-wine/ppa
        ppa:n-muench/burg                        ppa:nilarimogard/webupd8
-       ppa:samrog131/ppa                        ppa:webupd8team/tribler
+       ppa:samrog131/ppa                        
        ppa:webupd8team/y-ppa-manager            ppa:me-davidsansome/clementine
-       ppa:wfg/0ad.dev                          ppa:indicator-multiload/daily
+      ppa:indicator-multiload/daily
        ppa:ytvwld/syncthing
      )
 
