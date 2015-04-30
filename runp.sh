@@ -20,7 +20,7 @@ ppas=(
        ppa:n-muench/burg                        ppa:nilarimogard/webupd8
        ppa:samrog131/ppa                        
        ppa:webupd8team/y-ppa-manager            ppa:me-davidsansome/clementine
-      ppa:indicator-multiload/daily
+       ppa:indicator-multiload/daily
        ppa:ytvwld/syncthing
      )
 
@@ -55,7 +55,6 @@ packages=(
            dnscrypt-proxy 
            conky-manager 
            unity-launcher-folders 
-           0ad 
            gufw burg burg-themes 
            y-ppa-manager 
            ubuntu-vm-builder 
@@ -72,7 +71,7 @@ packages=(
            lib32bz2-1.0
            gnome-boxes
            syncthing
-           spotify-client-qt
+           spotify-client
          )
 
 # --- start -------------------
