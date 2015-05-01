@@ -111,7 +111,8 @@ done
     do
         apt-get install -y "$pkg"
     done
-
+    
+    perl -pi -e 's/^(GRUB_TIMEOUT=)[0-9]+$/${1}2/g' /etc/default/grub
 # etc
 # etc
 # etc 
