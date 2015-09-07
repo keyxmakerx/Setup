@@ -162,10 +162,7 @@ echo Congratulations It finished!
  sleep 4
   
 #intel Drivers
-#sudo apt-get install i965-va-driver &&\ 
- #            sudo wget https://download.01.org/gfx/ubuntu/14.04/main/pool/main/i/intel-linux-graphics-installer/intel-linux-graphics-installer_1.0.5-0intel1_amd64.deb &&\ 
-  #           sudo apt-get update &&\ 
-   #          sudo dkph -i intel-linux-graphics-installer_1.0.5-0intel1_amd64.deb
+#sudo add-apt-repository ppa:oibaf/graphics-drivers
 
 #Nvidea Drivers
 #sudo add-apt-repository ppa:bumblebee/stable &&\
