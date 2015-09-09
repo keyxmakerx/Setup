@@ -63,6 +63,7 @@ packages=(
            clutter-gtk-1.0 mx-1.0 
            indicator-cpufreq traceroute photoqt screen 
            keybinder-3.0 gee-0.8 
+           psensor
            libnspr4-0d guake git gimp cmake 
            syncwall 
            terminator clementine 
