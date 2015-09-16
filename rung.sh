@@ -93,7 +93,7 @@ done
 {
     for ppa in "${ppas[@]}"
     do
-        add-apt repository -a "$ppa"
+        add-apt repository -y "$ppa"
     done
 
     for add in "${!add_ppas[@]}"
