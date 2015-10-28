@@ -44,6 +44,7 @@ packages=(
            google-chrome-unstable
            conky-all hddtemp
            dnscrypt-proxy
+           gparted
            vlc kodi
            wine1.7 nmon htop
            duck-launcher 
