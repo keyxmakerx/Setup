@@ -7,13 +7,13 @@ sleep 5
 sleep 10
 
 ppas=( 
-       ppa:nowrep/qupzilla                      ppa:sukso96100/budgie-desktop
-       ppa:daniel.pavel/solaar
+       ppa:nowrep/qupzilla                      
+       ppa:daniel.pavel/solaar                  ppa:the-duck/launcher
        ppa:nuvola-player-builders/stable        ppa:appgrid/stable
        ppa:dhor/myway                           ppa:hikariknight/unix-runescape-client
        ppa:atareao/atareao                      ppa:ffmulticonverter/stable
        ppa:peterlevi/ppa                        ppa:teejee2008/ppa
-       ppa:deluge-team/ppa                      ppa:asukhovatkin/unity-launcher-folders
+       ppa:deluge-team/ppa                      ppa:team-xbmc/ppa
        ppa:the-duck/launcher                    ppa:anton+/dnscrypt
        ppa:danielrichter2007/grub-customizer    ppa:george-edison55/george-edison
        ppa:samrog131/ppa                        ppa:ubuntu-wine/ppa
@@ -29,6 +29,7 @@ declare -A add_ppas=(
                       ["owncloud-client"]="http://download.opensuse.org/repositories/home:/colomboem/xUbuntu_14.10/ /"
                       ["dukto"]="http://download.opensuse.org/repositories/isv:/ownCloud:/community:/testing/xUbuntu_14.04/ /"                     
                       ["spotify"]="http://repository.spotify.com stable non-free" 
+                      ["Chrome"]="http://dl.google.com/linux/chrome/deb/ stable main"
                     )
 
 packages=(
@@ -42,6 +43,7 @@ packages=(
            nuvolaplayer
            google-chrome-unstable
            conky-all hddtemp
+           dnscrypt-proxy
            vlc xbmc
            wine1.7 nmon htop
            duck-launcher 
@@ -56,14 +58,13 @@ packages=(
            conky-manager 
            unity-launcher-folders 
            gufw burg burg-themes 
+           kodi
            y-ppa-manager 
            ubuntu-vm-builder 
-           tribler 
            clutter-gtk-1.0 mx-1.0 
-           indicator-cpufreq traceroute photoqt screen 
+           indicator-cpufreq traceroute screen 
            keybinder-3.0 gee-0.8 
            libnspr4-0d guake git gimp cmake 
-           syncwall 
            terminator clementine 
            libxml2-dev 
            lib32z1 
@@ -100,6 +101,7 @@ done
     wget http://debs.unvanquished.net/unvanquished-archive-key.gpg.asc
     apt-key add unvanquished-archive-key.gpg.asc
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59
+    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
 
     apt-get update && sudo apt-get autoremove
 
@@ -119,15 +121,8 @@ done
 
 }
 cd ~/Downloads 
-wget -O nomachine.deb http://download.nomachine.com/download/4.4/Linux/nomachine_4.4.12_11_amd64.deb
+wget -O nomachine.deb http://download.nomachine.com/download/5.0/Linux/nomachine_5.0.47_1_amd64.deb
 sudo dpkg -i nomachine.deb 
-wget -O Tomb.tar.gz https://files.dyne.org/tomb
-tar xvfz Tomb.tar.gz 
-cd Tomb-2.0.1 
-sudo make install 
-wget -O kingsoft-office-NoobsLab.deb http://kdl.cc.ksosoft.com/wps-community/download/a16/wps-office_9.1.0.4945~a16p3_i386.deb    &&\
-sudo dpkg -i kingsoft-office-NoobsLab.deb     
-rm kingsoft-office-NoobsLab.deb 
 wget http://repo.steampowered.com/steam/archive/precise/steam_latest.deb 
   sudo apt-get install gdebi-core 
   sudo gdebi steam_latest.deb 
