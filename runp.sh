@@ -44,7 +44,7 @@ packages=(
            google-chrome-unstable
            conky-all hddtemp
            dnscrypt-proxy
-           vlc xbmc
+           vlc kodi
            wine1.7 nmon htop
            duck-launcher 
            ubuntu-restricted-extras 
