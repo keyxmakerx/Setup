@@ -51,13 +51,12 @@ packages=(
            ubuntu-restricted-extras 
            geary git openshot mosh deluge 
            icedtea-7-plugin openjdk-7-jre openjdk-7-jdk unix-runescape-client 
-           unity-tweak-tool qemu-kvm 
+           qemu-kvm 
            libvirt-bin 
            variety openssh-server openssh-client mosh 
            ftp bridge-utils virt-manager minitube 
            dnscrypt-proxy 
            conky-manager 
-           unity-launcher-folders 
            gufw burg burg-themes 
            kodi
            y-ppa-manager 
@@ -90,7 +89,7 @@ done
 {
     for ppa in "${ppas[@]}"
     do
-        add-apt repository -y "$ppa"
+        apt-add-repository -y "$ppa"
     done
 
     for add in "${!add_ppas[@]}"
