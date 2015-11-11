@@ -49,7 +49,7 @@ packages=(
            geary git openshot mosh deluge 
            icedtea-7-plugin openjdk-7-jre openjdk-7-jdk unix-runescape-client 
            unity-tweak-tool qemu-kvm 
-           libvirt-bin 
+           libvirt-bin pavucontrol
            variety openssh-server openssh-client mosh 
            ftp bridge-utils virt-manager minitube 
            dnscrypt-proxy 
