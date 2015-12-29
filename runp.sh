@@ -16,7 +16,7 @@ ppas=(
        ppa:deluge-team/ppa                      ppa:team-xbmc/ppa
        ppa:the-duck/launcher                    ppa:anton+/dnscrypt
        ppa:danielrichter2007/grub-customizer    ppa:george-edison55/george-edison
-       ppa:samrog131/ppa                        ppa:ubuntu-wine/ppa
+       ppa:lumas/photoqt                        ppa:ubuntu-wine/ppa
        ppa:n-muench/burg                        ppa:nilarimogard/webupd8
        ppa:samrog131/ppa                        
        ppa:webupd8team/y-ppa-manager            ppa:me-davidsansome/clementine
