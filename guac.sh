@@ -4,6 +4,19 @@
 #Update Everything
 apt-get update && apt-get -y dist-upgrade
 
+
+#MySql Password
+while true; do
+read -p "Password for MySQL " mysqlpass;
+echo "Confirm Password ";
+read -p "Re-enter password" mysqlpassverify;
+if (echo "mysqlpass") = (echo "mysqlpassverify");
+  echo "Success"
+  break;
+else; 
+  echo "failed, please try again"
+fi;
+
 #Install Stuff
 apt-get -y install libcairo2-dev libpng12-dev libossp-uuid-dev libfreerdp-dev libpango1.0-dev libssh2-1-dev libtelnet-dev libvncserver-dev libpulse-dev libssl-dev libvorbis-dev libwebp-dev mysql-server mysql-client mysql-common mysql-utilities tomcat8
 
