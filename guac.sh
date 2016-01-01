@@ -103,7 +103,7 @@ flush privileges;
 quit
 
 #Populate MySQL
-cat guacamole-auth-jdbc-0.9.9/mysql/schema/*.sql | mysql -u root -pMYSQLROOTPASSWORD guacamole_db
+cat guacamole-auth-jdbc-0.9.9/mysql/schema/*.sql | mysql -u root -p $mysqlpass guacamole_db
 
 #Code Cleanup
 # Cleanup Downloads
