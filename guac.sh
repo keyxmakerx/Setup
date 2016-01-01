@@ -116,3 +116,6 @@ rm mysql-connector-java-5.1.38.tar.gz
 rm -rf mysql-connector-java-5.1.38/
 rm -rf guacamole-auth-jdbc-0.9.9/
 rm -rf guacamole-server-0.9.9/
+
+echo "credit goes to Chase Wright at http://chasewright.com/guacamole-with-mysql-on-ubuntu/"
+sleep 5
