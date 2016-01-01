@@ -1,3 +1,4 @@
+#!/bin/bash
 #MySql Password
 while true; do
 read -p "Password for MySQL " mysqlpass;
