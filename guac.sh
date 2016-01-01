@@ -4,21 +4,39 @@
 #Update Everything
 apt-get update && apt-get -y dist-upgrade
 
-
 #MySql Password
 while true; do
 read -p "Password for MySQL " mysqlpass;
-echo "Confirm Password ";
-read -p "Re-enter password" mysqlpassverify;
-if (echo "mysqlpass") = (echo "mysqlpassverify");
-  echo "Success"
-  break;
-else; 
-  echo "failed, please try again"
-fi;
+echo "Confirm Password ";    
+read -p "Re-enter password: " mysqlpassverify;    
+if [ $mysqlpass == $mysqlpassverify ]; then     
+echo "Success"
+break;  
+else      
+echo "failed, please try again"     
+echo;          
+fi;             
+done;
+
+#Guacamole password
+while true; do
+read -p "Password for Guacamole " gpass;
+echo "Confirm Password ";    
+read -p "Re-enter password: "gpassverify;    
+if [ $gpass == $gpassverify ]; then     
+echo "Success"
+break;  
+else      
+echo "failed, please try again"     
+echo;          
+fi;             
+done;
 
 #Install Stuff
-apt-get -y install libcairo2-dev libpng12-dev libossp-uuid-dev libfreerdp-dev libpango1.0-dev libssh2-1-dev libtelnet-dev libvncserver-dev libpulse-dev libssl-dev libvorbis-dev libwebp-dev mysql-server mysql-client mysql-common mysql-utilities tomcat8
+sudo debconf-set-selections <<< 'mysql-server mysql-server/$mysqlpass'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/$mysqlpass'
+sudo apt-get -y install mysql-server
+apt-get -y install libcairo2-dev libpng12-dev libossp-uuid-dev libfreerdp-dev libpango1.0-dev libssh2-1-dev libtelnet-dev libvncserver-dev libpulse-dev libssl-dev libvorbis-dev libwebp-dev  mysql-client mysql-common mysql-utilities tomcat8
 
 # Install libjpeg-turbo-dev
 wget -O libjpeg-turbo-official_1.4.2_amd64.deb http://downloads.sourceforge.net/project/libjpeg-turbo/1.4.2/libjpeg-turbo-official_1.4.2_amd64.deb
@@ -67,15 +85,15 @@ echo "mysql-database: guacamole_db" >> /etc/guacamole/guacamole.properties
 echo "mysql-username: guacamole_user" >> /etc/guacamole/guacamole.properties
 
 # This is where you will want to change "PASSWORD"
-echo "mysql-password: PASSWORD" >> /etc/guacamole/guacamole.properties
+echo "mysql-password: $mysqlpass" >> /etc/guacamole/guacamole.properties
 ln -s /etc/guacamole /usr/share/tomcat8/.guacamole
 
 # Restart Tomcat Service
 service tomcat8 restart
 
-mysql -u root -pMYSQLROOTPASSWORD
+mysql -u root -p $mysqlpass
 create database guacamole_db;
-create user 'guacamole_user'@'localhost' identified by 'PASSWORD';
+create user 'guacamole_user'@'localhost' identified by '$gpass';
 GRANT SELECT,INSERT,UPDATE,DELETE ON guacamole_db.* TO 'guacamole_user'@'localhost';
 flush privileges;
 quit
