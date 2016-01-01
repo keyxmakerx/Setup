@@ -1,6 +1,9 @@
 #!/bin/bash
 # WORKING ON UBUNTU 15.10 WITH GUAC 0.9.9 AND TOMCAT8
 
+#Move to Hoome Directory
+cd ~\
+
 #Update Everything
 apt-get update && apt-get -y dist-upgrade
 
@@ -91,9 +94,25 @@ ln -s /etc/guacamole /usr/share/tomcat8/.guacamole
 # Restart Tomcat Service
 service tomcat8 restart
 
+#Setup MySQL
 mysql -u root -p $mysqlpass
 create database guacamole_db;
 create user 'guacamole_user'@'localhost' identified by '$gpass';
 GRANT SELECT,INSERT,UPDATE,DELETE ON guacamole_db.* TO 'guacamole_user'@'localhost';
 flush privileges;
 quit
+
+#Populate MySQL
+cat guacamole-auth-jdbc-0.9.9/mysql/schema/*.sql | mysql -u root -pMYSQLROOTPASSWORD guacamole_db
+
+#Code Cleanup
+# Cleanup Downloads
+rm libjpeg-turbo-official_1.4.2_amd64.deb
+rm guacamole-server-0.9.9.tar.gz
+rm guacamole-auth-jdbc-0.9.9.tar.gz
+rm mysql-connector-java-5.1.38.tar.gz
+
+# Cleanup Folders
+rm -rf mysql-connector-java-5.1.38/
+rm -rf guacamole-auth-jdbc-0.9.9/
+rm -rf guacamole-server-0.9.9/
