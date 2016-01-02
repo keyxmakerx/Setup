@@ -1,4 +1,7 @@
 #!/bin/bash
+#Possible fix 
+mysqlpass=''
+
 #MySql Password
 while true; do
 read -p "Password for MySQL " mysqlpass;
@@ -11,4 +14,6 @@ else
 echo "failed, please try again"     
 echo;          
 fi;             
-done;     
+done;
+
+echo "this is the pass = $mysqlpass"
