@@ -10,8 +10,9 @@ cd ~\
 #Update Everything
 apt-get update && apt-get -y dist-upgrade
 
-#Possible fix 
+#Nulled Values that will be changed
 mysqlpass=''
+gpass=''
 
 #MySql Password
 while true; do
@@ -128,3 +129,9 @@ rm -rf guacamole-server-0.9.9/
 
 echo "credit goes to Chase Wright at http://chasewright.com/guacamole-with-mysql-on-ubuntu/"
 sleep 5
+
+#Also shout out to the following
+#Cameron Hunt - Fix for the scope issue
+#muru&glenn jackman @ askubuntu - Attempt to help fix the scope issue
+#Philipp Klaus - For the RAM Script
+#Chase Wright - for the rest of the script
