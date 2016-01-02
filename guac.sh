@@ -1,6 +1,9 @@
 #!/bin/bash
 # WORKING ON UBUNTU 15.10 WITH GUAC 0.9.9 AND TOMCAT8
 
+# Sudo ourself
+[[ $(id --user) -ne 0 ]] && { echo "Sudoing..." ; sudo $(readlink -e $0) "$@" ; exit 0 ; }
+
 #Move to Hoome Directory
 cd ~\
 
@@ -119,6 +122,9 @@ rm mysql-connector-java-5.1.38.tar.gz
 rm -rf mysql-connector-java-5.1.38/
 rm -rf guacamole-auth-jdbc-0.9.9/
 rm -rf guacamole-server-0.9.9/
+
+# Cleanup RAM
+./ram.sh
 
 echo "credit goes to Chase Wright at http://chasewright.com/guacamole-with-mysql-on-ubuntu/"
 sleep 5
