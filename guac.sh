@@ -7,6 +7,9 @@ cd ~\
 #Update Everything
 apt-get update && apt-get -y dist-upgrade
 
+#Possible fix 
+mysqlpass=''
+
 #MySql Password
 while true; do
 read -p "Password for MySQL " mysqlpass;
