@@ -31,4 +31,12 @@ freemem_after=$(cat /proc/meminfo | grep MemFree | tr -s ' ' | cut -d ' ' -f2) &
 # Output Summary
 echo -e "This freed $(echo "$freemem_after - $freemem_before" | bc) MiB, so now you have $freemem_after MiB of free RAM."
 
+apt-get install bleachbit 
+bleachbit --list | grep -E "[a-z]+\.[a-z]+" | grep -v system.free_disk_space | xargs bleachbit --clean
+apt-get purge bleachbit
+
+
+
+
+
 exit 0
