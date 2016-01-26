@@ -102,12 +102,7 @@ ln -s /etc/guacamole /usr/share/tomcat8/.guacamole
 service tomcat8 restart
 
 #Setup MySQL
-mysql -u root -p $mysqlpass
-create database guacamole_db;
-create user 'guacamole_user'@'localhost' identified by '$gpass';
-GRANT SELECT,INSERT,UPDATE,DELETE ON guacamole_db.* TO 'guacamole_user'@'localhost';
-flush privileges;
-quit
+./mysql-db-create.sh guacamole_db guacamole_user $gpass
 
 #Populate MySQL
 cat guacamole-auth-jdbc-0.9.9/mysql/schema/*.sql | mysql -u root -p $mysqlpass guacamole_db
