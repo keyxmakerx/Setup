@@ -120,7 +120,7 @@ rm -rf guacamole-auth-jdbc-0.9.9/
 rm -rf guacamole-server-0.9.9/
 
 # Cleanup RAM
-./ram.sh
+~/Setup/./ram.sh
 
 echo "credit goes to Chase Wright at http://chasewright.com/guacamole-with-mysql-on-ubuntu/"
 sleep 5
