@@ -32,7 +32,7 @@ done;
 while true; do
 read -p "Password for Guacamole " gpass;
 echo "Confirm Password ";    
-read -p "Re-enter password: "gpassverify;    
+read -p "Re-enter password: " gpassverify;    
 if [ $gpass == $gpassverify ]; then     
 echo "Success"
 break;  
