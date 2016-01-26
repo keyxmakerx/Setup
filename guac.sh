@@ -102,7 +102,7 @@ ln -s /etc/guacamole /usr/share/tomcat8/.guacamole
 service tomcat8 restart
 
 #Setup MySQL
-./mysql-db-create.sh guacamole_db guacamole_user $gpass
+~/Setup/./mysql-db-create.sh guacamole_db guacamole_user $gpass
 
 #Populate MySQL
 cat guacamole-auth-jdbc-0.9.9/mysql/schema/*.sql | mysql -u root -p $mysqlpass guacamole_db
