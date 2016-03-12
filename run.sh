@@ -31,6 +31,9 @@ dir="$(dirname "$0")"
 
 . $dir/function/check
 source $dir/function/server
+source $dir/functions/actions/cleanup
+source $dir/functions/actions/user
+
 
 #----- Fancy Messages -----#
 show_error(){
