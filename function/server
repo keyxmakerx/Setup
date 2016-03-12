@@ -4,7 +4,6 @@
 dir="$(dirname "$0")"
 
 . $dir/function/function/cleanup
-. $dir/function/function/server_setup
 
 function server {
     eval `resize`
@@ -15,7 +14,6 @@ function server {
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        'server_setup'            'Basic Server Setup' \
         'cleanup'             'Basic Cleaning Service' \
         3>&1 1>&2 2>&3)
      
