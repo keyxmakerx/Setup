@@ -67,10 +67,7 @@ function clean-cache {
     show_info 'Cleaning package cache...'
     show_warning 'Requires root privileges'
     sudo apt-get clean
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Package cache has been cleaned." 8 78
-    cleanup
-    if [ "$(whoami)" != "root" ]
+      if [ "$(whoami)" != "root" ]
 then
   echo "You have to run this script as Superuser!"
   exit 1
@@ -102,6 +99,10 @@ apt-get install bleachbit
 bleachbit --list | grep -E "[a-z]+\.[a-z]+" | grep -v system.free_disk_space | xargs bleachbit --clean
 apt-get purge bleachbit
 }
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Package cache has been cleaned." 8 78
+    cleanup
+  
 
 # Cleanup System
 function cleanup {
