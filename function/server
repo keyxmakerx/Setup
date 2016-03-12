@@ -4,6 +4,7 @@
 dir="$(dirname "$0")"
 
 source $dir/functions/functions/server
+source $dir/functions/functions/clean
 
 function thirdparty {
     eval `resize`
@@ -15,6 +16,7 @@ function thirdparty {
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         'server'            'Basic Server Setup' \
+        'clean'             'Basic Cleaning Service' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?
