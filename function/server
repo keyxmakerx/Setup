@@ -6,7 +6,7 @@ dir="$(dirname "$0")"
 source $dir/functions/functions/server
 source $dir/functions/functions/clean
 
-function thirdparty {
+function server {
     eval `resize`
     THIRDPARTY=$(whiptail \
         --notags \
