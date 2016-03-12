@@ -3,7 +3,7 @@
 
 dir="$(dirname "$0")"
 
-source $dir/function/cleanup
+source $dir/function/actions/cleanup
 
 function server {
     eval `resize`
