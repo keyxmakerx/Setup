@@ -30,7 +30,7 @@ clear
 dir="$(dirname "$0")"
 
 . $dir/function/check
-. $dir/function/server
+source $dir/function/server
 
 #----- Fancy Messages -----#
 show_error(){
