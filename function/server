@@ -4,7 +4,7 @@
 dir="$(dirname "$0")"
 
 source $dir/functions/functions/server
-source $dir/functions/functions/clean
+source $dir/functions/functions/cleanup
 
 function server {
     eval `resize`
