@@ -30,13 +30,6 @@ clear
 dir="$(dirname "$0")"
 
 . $dir/functions/check
-. $dir/functions/cleanup
-. $dir/functions/codecs
-. $dir/functions/configure
-. $dir/functions/development
-. $dir/functions/favourites
-. $dir/functions/thirdparty
-. $dir/functions/update
 . $dir/functions/server
 
 #----- Fancy Messages -----#
