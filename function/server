@@ -1,11 +1,4 @@
 #!/bin/bash
-
-
-dir="$(dirname "$0")"
-
-. $dir/function/actions/cleanall
-. $dir/function/actions/user
-
 function server {
     eval `resize`
     SERVER=$(whiptail \
