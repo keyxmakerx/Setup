@@ -3,8 +3,8 @@
 
 dir="$(dirname "$0")"
 
-source $dir/actions/cleanup
-source $dir/actions/user
+. $dir/function/actions/cleanup
+. $dir/function/actions/user
 
 function server {
     eval `resize`
@@ -15,8 +15,8 @@ function server {
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        'cleanup'             'Basic Cleaning Service' \
-        'user'                'Create a New User'\
+        cleanup             'Basic Cleaning Service' \
+        user                'Create a New User'\
         3>&1 1>&2 2>&3)
      
     exitstatus=$?
