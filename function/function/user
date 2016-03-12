@@ -1,0 +1,50 @@
+#!/bin/bash
+
+
+_define_username() {
+  local UN_B
+  local UN_A
+
+  UN_A=$(whiptail --passwordbox --nocancel --title "Enter new Username" \
+    "Enter new username: "$NEW_USER 10 40 \
+    3>&1 1>&2 2>&3)
+
+  if [ $? -eq 0 ]; then 
+    UN_B=$(whiptail --passwordbox "Enter the username again" \
+      --nocancel --title "Verify Username" 10 40 \
+    3>&1 1>&2 2>&3)
+  fi
+
+  if [ $? -eq 0 ] && [ "$PW_A" != "$PW_B" ]; then
+    PW_A=""
+    whiptail --msgbox "Usernames have to be the same."  10 40
+  fi
+  echo "$UN_A"
+}
+
+
+
+_define_password() {
+  local PW_B
+  local PW_A
+
+  PW_A=$(whiptail --passwordbox --nocancel --title "Enter password" \
+    "Enter a password for the new user name: "$NEW_USER 10 40 \
+    3>&1 1>&2 2>&3)
+
+  if [ $? -eq 0 ]; then 
+    PW_B=$(whiptail --passwordbox "Enter the password again" \
+      --nocancel --title "Verify password" 10 40 \
+    3>&1 1>&2 2>&3)
+  fi
+
+  if [ $? -eq 0 ] && [ "$PW_A" != "$PW_B" ]; then
+    PW_A=""
+    whiptail --msgbox "Passwords have to be the same."  10 40
+  fi
+  echo "$PW_A"
+}
+
+for srv in $(cat server.list); do
+   ssh $srv useradd -m -p "$PW_A" $UN_A
+done
