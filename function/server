@@ -16,7 +16,7 @@ function server {
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         'server'            'Basic Server Setup' \
-        'clean'             'Basic Cleaning Service' \
+        'cleanup'             'Basic Cleaning Service' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?
