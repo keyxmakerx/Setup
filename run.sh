@@ -29,8 +29,8 @@ clear
 
 dir="$(dirname "$0")"
 
-. $dir/functions/check
-. $dir/functions/server
+. $dir/function/check
+. $dir/function/server
 
 #----- Fancy Messages -----#
 show_error(){
