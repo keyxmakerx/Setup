@@ -3,8 +3,7 @@
 ## By Philipp Klaus
 ## see <http://blog.philippklaus.de/2011/02/clear-cached-memory-on-ubuntu/>
 
-PHILL={
- if [ "$(whoami)" != "root" ]
+PHILL={ if [ "$(whoami)" != "root" ]
 then
   echo "You have to run this script as Superuser!"
   exit 1
@@ -36,7 +35,7 @@ apt-get -y install bleachbit
 bleachbit --list | grep -E "[a-z]+\.[a-z]+" | grep -v system.free_disk_space | xargs bleachbit --clean
 apt-get -y purge bleachbit
 }
-
+}
 
 
 dir="$(dirname "$0")"
