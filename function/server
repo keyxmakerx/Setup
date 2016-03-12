@@ -3,12 +3,12 @@
 
 dir="$(dirname "$0")"
 
-source $dir/functions/functions/server
-source $dir/functions/functions/cleanup
+source $dir/functions/function/server
+source $dir/functions/function/cleanup
 
 function server {
     eval `resize`
-    THIRDPARTY=$(whiptail \
+    SERVER=$(whiptail \
         --notags \
         --title "Server Installation" \
         --menu "\nWhat third-party software would you like to install?" \
@@ -21,7 +21,7 @@ function server {
      
     exitstatus=$?
     if [ $exitstatus = 0 ]; then
-        clear && $THIRDPARTY
+        clear && $SERVER
     else
         clear && main
     fi
