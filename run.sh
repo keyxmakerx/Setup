@@ -31,7 +31,7 @@ dir="$(dirname "$0")"
 
 . $dir/function/check
 source $dir/function/server
-source $dir/functions/actions/cleanup
+source $dir/functions/cleanup
 source $dir/functions/actions/user
 
 
@@ -97,7 +97,7 @@ function server {
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        cleanall             'Basic Cleaning Service' \
+        cleanup             'Basic Cleaning Service' \
         user                'Create a New User'\
         3>&1 1>&2 2>&3)
      
