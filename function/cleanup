@@ -35,7 +35,7 @@ apt-get -y install bleachbit
 bleachbit --list | grep -E "[a-z]+\.[a-z]+" | grep -v system.free_disk_space | xargs bleachbit --clean
 apt-get -y purge bleachbit
 }
-}
+
 
 
 dir="$(dirname "$0")"
