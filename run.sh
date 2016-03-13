@@ -97,8 +97,8 @@ function server {
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        cleanup             'Basic Cleaning Service' \
-        user                'Create a New User'\
+        'cleanup'             'Basic Cleaning Service' \
+        'user'                'Create a New User'\
         3>&1 1>&2 2>&3)
      
     exitstatus=$?
