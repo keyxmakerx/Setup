@@ -86,6 +86,29 @@ function main {
     fi
 }
 
+
+#!/bin/bash
+function server {
+    eval `resize`
+    SERVER=$(whiptail \
+        --notags \
+        --title "Server Installation" \
+        --menu "\nWhat third-party software would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        cleanall             'Basic Cleaning Service' \
+        user                'Create a New User'\
+        3>&1 1>&2 2>&3)
+     
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $SERVER
+    else
+        clear && main
+    fi
+}
+
 # Quit
 function quit {
     if (whiptail --title "Quit" --yesno "Are you sure you want quit?" 10 60) then
