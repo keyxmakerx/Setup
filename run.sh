@@ -31,8 +31,8 @@ dir="$(dirname "$0")"
 
 . $dir/function/check
 source $dir/function/server
-source $dir/functions/cleanup
-source $dir/functions/actions/user
+source $dir/function/cleanup
+source $dir/function/actions/user
 
 
 #----- Fancy Messages -----#
