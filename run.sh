@@ -32,7 +32,7 @@ dir="$(dirname "$0")"
 . $dir/function/check
 source $dir/function/server
 source $dir/function/cleanup
-source $dir/function/actions/user
+source $dir/functions/actions/user
 
 
 #----- Fancy Messages -----#
